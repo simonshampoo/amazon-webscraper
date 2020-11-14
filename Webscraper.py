@@ -3,10 +3,10 @@ from bs4 import BeautifulSoup
 import smtplib
 import time
 
-URL = 'https://www.amazon.com/Cooler-Master-MasterLiquid-Chamber-MLA-D24M-A18PC-R1/dp/B07CRGC899/ref=sr_1_3?crid=27DW5B6SBZO0Y&dchild=1&keywords=pc+liquid+cooler&qid=1596674717&sprefix=pc+liquid+%2Caps%2C204&sr=8-3'
+URL = 'x'
 
 headers = {
-    "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36'}
+    "x'}
 
 def check_price():
     page = requests.get(URL, requests, headers=headers)
@@ -29,13 +29,13 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('simonshm5@gmail.com', 'alhmrwxpcmknbztz')
+    server.login('x@gmail.com', 'appPassword') #x@gmail.com will be the email that you want to send the email from. 
 
     subject = 'price lowered!'
     body = 'link : https://www.amazon.com/Cooler-Master-MasterLiquid-Chamber-MLA-D24M-A18PC-R1/dp/B07CRGC899/ref=sr_1_3?crid=27DW5B6SBZO0Y&dchild=1&keywords=pc+liquid+cooler&qid=1596674717&sprefix=pc+liquid+%2Caps%2C204&sr=8-3'
     msg = f"Subject: {subject}\n\n{body}"
 
-    server.sendmail('simonshm5@gmail.com', 'simonshm5@gmail.com', msg)
+    server.sendmail('x@gmail.com', 'y@gmail.com', msg) #x sends to y. x must be the same in line 32
     print("email has been sent")
 
     server.quit()
